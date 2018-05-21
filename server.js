@@ -16,8 +16,8 @@ const server = new Hapi.Server();
 const req = require('request');
 const Joi = require('joi');
 
-var connecParams = (config.env === 'production')  ?   { port: process.env.PORT }
-                : {port: config.port, host:config.host};
+var connecParams = (config.env === 'production')  ?   { port: process.env.PORT, routes: { cors: true } }
+                : {port: config.port, host:config.host, routes: { cors: true }};
 
 server.connection(connecParams);
 
@@ -61,16 +61,16 @@ server.route({
     method: 'GET',
     path: '/',
     handler: function(request, response) {
-        response.view('index');
-//        req(config.restURL+'pets/', function (err, resp, cont) {
-//            if (!err && resp.statusCode === 200) {
-//                response.view('index', {status: resp.statusCode, data: JSON.parse(cont)});
-//            } else {
-//                throw err;
-//                console.log(err);
-//                response.view('index', {status: resp.statusCode, data: JSON.parse(err)});
-//            }
-//        });
+        //response.view('index');
+        req(config.restURL+'pets/', function (err, resp, cont) {
+            if (!err && resp.statusCode === 200) {
+                response.view('index', {status: resp.statusCode, data: JSON.parse(cont)});
+            } else {
+                throw err;
+                console.log(err);
+                response.view('index', {status: resp.statusCode, data: JSON.parse(err)});
+            }
+        });
     }
 });
 

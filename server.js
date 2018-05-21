@@ -1,12 +1,7 @@
 'use strict';
 
-var config = {
-    env: "production",
-    host: "localhost",
-    port: 3000,
-    charset: "utf8",
-    restURL: "http://example.com/"
-};
+// api general config
+var config = require('./config');
 
 const author = {
     name: "Jamiu Mojolagbe",

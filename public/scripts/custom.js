@@ -78,7 +78,13 @@ function checkWeather(pet, messageBox, responseBox){
             messageBox.hide();
             responseBox.removeClass('hidden').show();
             console.log(data);
-            if(data.hourly.icon === 'rain' || data.currently.icon === 'rain'){
+            
+            var precipVal = 0;
+            $.each(data.hourly.data, function(index, item) { 
+                precipVal = item.precipProbability > precipVal ? item.precipProbability : precipVal; 
+            });
+            
+            if(data.currently.icon === 'rain' || data.hourly.icon === 'rain' || precipVal > 0.02){
                 responseBox.find('h3').text('It looks like '+pet.attr('data-name')+' is going to need one in '+pet.attr('data-location')+'.');
                 responseBox.find('h2').text('Yup!');
                 responseBox.find('img').attr('src', 'public/images/cat-holding-umbrella.png');

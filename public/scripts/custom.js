@@ -78,7 +78,7 @@ function checkWeather(pet, messageBox, responseBox){
             messageBox.hide();
             responseBox.removeClass('hidden').show();
             console.log(data);
-            if(data.hourly.icon === 'rain'){
+            if(data.hourly.icon === 'rain' || data.currently.icon === 'rain' || data.minutely.icon === 'rain'){
                 responseBox.find('h3').text('It looks like '+pet.attr('data-name')+' is going to need one in '+pet.attr('data-location')+'.');
                 responseBox.find('h2').text('Yup!');
                 responseBox.find('img').attr('src', 'public/images/cat-holding-umbrella.png');

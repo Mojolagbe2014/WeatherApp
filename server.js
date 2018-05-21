@@ -66,16 +66,16 @@ server.route({
     method: 'GET',
     path: '/',
     handler: function(request, response) {
-        //response.view('index');
-        req(config.restURL+'pets/', function (err, resp, cont) {
-            if (!err && resp.statusCode === 200) {
-                response.view('index', {status: resp.statusCode, data: JSON.parse(cont)});
-            } else {
-                throw err;
-                console.log(err);
-                response.view('index', {status: resp.statusCode, data: JSON.parse(err)});
-            }
-        });
+        response.view('index');
+//        req(config.restURL+'pets/', function (err, resp, cont) {
+//            if (!err && resp.statusCode === 200) {
+//                response.view('index', {status: resp.statusCode, data: JSON.parse(cont)});
+//            } else {
+//                throw err;
+//                console.log(err);
+//                response.view('index', {status: resp.statusCode, data: JSON.parse(err)});
+//            }
+//        });
     }
 });
 

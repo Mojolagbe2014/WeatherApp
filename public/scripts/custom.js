@@ -79,12 +79,12 @@ function checkWeather(pet, messageBox, responseBox){
             responseBox.removeClass('hidden').show();
             console.log(data);
             
-            var minVal = 0.01;
+            var minVal = 0.03;
             var precipVal = 0;
             $.each(data.hourly.data, function(index, item) { 
                 precipVal = item.precipProbability > precipVal ? item.precipProbability : precipVal; 
             });
-           alert(precipVal);
+           //alert(precipVal);
             if(data.currently.icon === 'rain' || data.hourly.icon === 'rain' || precipVal > minVal){
                 responseBox.find('h3').text('It looks like '+pet.attr('data-name')+' is going to need one in '+pet.attr('data-location')+'.');
                 responseBox.find('h2').text('Yup!');

@@ -4,7 +4,7 @@ var config = {
     host: "localhost",
     port: 3000,
     charset: "utf8",
-    restURL: "http://example.com/"
+    restURL: "https://petshelterapi-jamiu.herokuapp.com/"
 };
 
 module.exports = config;

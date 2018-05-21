@@ -1,11 +1,11 @@
 'use strict';
 
 var config = {
-    env: "development",
+    env: "production",
     host: "localhost",
     port: 3000,
     charset: "utf8",
-    restURL: "http://localhost:8000/"
+    restURL: "http://example.com/"
 };
 
 const author = {

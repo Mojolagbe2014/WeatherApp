@@ -55,11 +55,13 @@ Usage
 
 Here is how you use it:
 
-  * http://localhost:[insert_the_port]/           - It is the home page and contains the list of all the registered pets.
+  * http://localhost:[insert_the_port]/     - It is the home page and contains the list of all the registered pets.
   
-  * http://localhost:[insert_the_port]/pets/id/   - Shows the answer for the pet with `ID = id`. Simply clicking on the :eye: symbol infront of a specific pet on the home page will navigate to this page.
+  * http://localhost:[insert_the_port]/id   - Shows the answer for the pet with `ID = id`. Simply clicking on the :eye: symbol infront of a specific pet on the home page will navigate to this page.
   
-  * http://localhost:[insert_the_port]/pet/add/   - It is the page for adding a new pet. By clicking on the :heavy_plus_sign: symbol on the home page you get to this page. It auto detects the user's latitude, longitude, and location. However, the user can also change the latitude and longitude values but not the location. The location is on automatic detection.
+  * http://localhost:[insert_the_port]/add  - It is the page for adding a new pet. By clicking on the :heavy_plus_sign: symbol on the home page you get to this page. It auto detects the user's latitude, longitude, and location. However, the user can also change the latitude and longitude values but not the location. The location is on automatic detection.
+
+  * http://localhost:[insert_the_port]/author     - Author's page.
 
 #### For online based server replace the `http://localhost:[insert_the_port]/` with the appropriate address.
 

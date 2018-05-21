@@ -83,7 +83,7 @@ function checkWeather(pet, messageBox, responseBox){
             $.each(data.hourly.data, function(index, item) { 
                 precipVal = item.precipProbability > precipVal ? item.precipProbability : precipVal; 
             });
-            
+           alert(precipVal);
             if(data.currently.icon === 'rain' || data.hourly.icon === 'rain' || precipVal > 0.02){
                 responseBox.find('h3').text('It looks like '+pet.attr('data-name')+' is going to need one in '+pet.attr('data-location')+'.');
                 responseBox.find('h2').text('Yup!');

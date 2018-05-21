@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Pet Weather App</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pet weather app checks if your pet need an umbrella or not."/>
+    <meta name="keyword" content="pet, weather, app, check, umbrella"/>
+    
+    <!-- import CSS or other 3rd pary libs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/style.css" type="text/css">
+</head>  
+<body>
+
+    {{! Fetch header from partials }}
+    {{> header}}
+    
+    <div class="container">
+        {{! Other views goes here }}
+        {{{content}}}
+    </div>
+
+    {{! Fetch footer from partials}}
+    {{> footer}}
+
+</body>  
+</html>  
